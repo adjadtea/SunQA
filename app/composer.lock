@@ -1,0 +1,1432 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "464abc43ac8a0c108bb8c7c7fe0a00bd",
+    "packages": [
+        {
+            "name": "brandonwamboldt/utilphp",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brandonwamboldt/utilphp.git",
+                "reference": "36c32efc4f0679c05163464a550f45c8d83fe683"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brandonwamboldt/utilphp/zipball/36c32efc4f0679c05163464a550f45c8d83fe683",
+                "reference": "36c32efc4f0679c05163464a550f45c8d83fe683",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "utilphp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Wamboldt",
+                    "email": "brandon.wamboldt@gmail.com"
+                }
+            ],
+            "description": "util.php is a collection of useful functions and snippets that you need or could use every day, designed to avoid conflicts with existing projects",
+            "homepage": "https://github.com/brandonwamboldt/utilphp",
+            "keywords": [
+                "collection",
+                "helpers",
+                "php",
+                "utility"
+            ],
+            "time": "2015-02-02T17:56:14+00:00"
+        },
+        {
+            "name": "gregwar/captcha",
+            "version": "v1.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gregwar/Captcha.git",
+                "reference": "6088ad3db59bc226423ad1476a9f0424b19b1866"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gregwar/Captcha/zipball/6088ad3db59bc226423ad1476a9f0424b19b1866",
+                "reference": "6088ad3db59bc226423ad1476a9f0424b19b1866",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0",
+                "symfony/finder": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.4"
+            },
+            "type": "captcha",
+            "autoload": {
+                "psr-4": {
+                    "Gregwar\\": "src/Gregwar"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Passault",
+                    "email": "g.passault@gmail.com",
+                    "homepage": "http://www.gregwar.com/"
+                },
+                {
+                    "name": "Jeremy Livingston",
+                    "email": "jeremy.j.livingston@gmail.com"
+                }
+            ],
+            "description": "Captcha generator",
+            "homepage": "https://github.com/Gregwar/Captcha",
+            "keywords": [
+                "bot",
+                "captcha",
+                "spam"
+            ],
+            "time": "2020-01-22T14:54:02+00:00"
+        },
+        {
+            "name": "jenssegers/date",
+            "version": "v3.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/date.git",
+                "reference": "58393b0544fc2525b3fcd02aa4c989857107e05a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/58393b0544fc2525b3fcd02aa4c989857107e05a",
+                "reference": "58393b0544fc2525b3fcd02aa4c989857107e05a",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "^1.0|^2.0",
+                "php": ">=5.6",
+                "symfony/translation": "^2.7|^3.0|^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0|^6.0|^7.0",
+                "satooshi/php-coveralls": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Jenssegers\\Date\\DateServiceProvider"
+                    ],
+                    "aliases": {
+                        "Date": "Jenssegers\\Date\\Date"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jenssegers\\Date\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "https://jenssegers.com"
+                }
+            ],
+            "description": "A date library to help you work with dates in different languages",
+            "homepage": "https://github.com/jenssegers/date",
+            "keywords": [
+                "carbon",
+                "date",
+                "datetime",
+                "i18n",
+                "laravel",
+                "time",
+                "translation"
+            ],
+            "time": "2019-03-10T08:50:58+00:00"
+        },
+        {
+            "name": "kint-php/kint",
+            "version": "3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kint-php/kint.git",
+                "reference": "335ac1bcaf04d87df70d8aa51e8887ba2c6d203b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kint-php/kint/zipball/335ac1bcaf04d87df70d8aa51e8887ba2c6d203b",
+                "reference": "335ac1bcaf04d87df70d8aa51e8887ba2c6d203b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.6"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "phpunit/phpunit": "^4.0",
+                "seld/phar-utils": "^1.0",
+                "symfony/finder": "^2.0 || ^3.0 || ^4.0",
+                "vimeo/psalm": "^3.0"
+            },
+            "suggest": {
+                "ext-ctype": "Simple data type tests",
+                "ext-iconv": "Provides fallback detection for ambiguous legacy string encodings such as the Windows and ISO 8859 code pages",
+                "ext-mbstring": "Provides string encoding detection",
+                "kint-php/kint-js": "Provides a simplified dump to console.log()",
+                "kint-php/kint-twig": "Provides d() and s() functions in twig templates",
+                "symfony/polyfill-ctype": "Replacement for ext-ctype if missing",
+                "symfony/polyfill-iconv": "Replacement for ext-iconv if missing",
+                "symfony/polyfill-mbstring": "Replacement for ext-mbstring if missing"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "init.php"
+                ],
+                "psr-4": {
+                    "Kint\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Vollebregt",
+                    "homepage": "https://github.com/jnvsor"
+                },
+                {
+                    "name": "Rokas Šleinius",
+                    "homepage": "https://github.com/raveren"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/kint-php/kint/graphs/contributors"
+                }
+            ],
+            "description": "Kint - debugging tool for PHP developers",
+            "homepage": "https://kint-php.github.io/kint/",
+            "keywords": [
+                "debug",
+                "kint",
+                "php"
+            ],
+            "time": "2019-10-17T18:05:24+00:00"
+        },
+        {
+            "name": "kint-php/kint-js",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kint-php/kint-js.git",
+                "reference": "d2455136a19f87aed682bb803790a0f71ad4be41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kint-php/kint-js/zipball/d2455136a19f87aed682bb803790a0f71ad4be41",
+                "reference": "d2455136a19f87aed682bb803790a0f71ad4be41",
+                "shasum": ""
+            },
+            "require": {
+                "kint-php/kint": "^3.0@dev"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "seld/phar-utils": "^1.0",
+                "vimeo/psalm": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "init.php"
+                ],
+                "psr-4": {
+                    "Kint\\Renderer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Vollebregt",
+                    "email": "jnvsor@gmail.com"
+                }
+            ],
+            "description": "Renderer plugin for Kint that dumps to console.log()",
+            "time": "2018-08-22T17:36:46+00:00"
+        },
+        {
+            "name": "kylekatarnls/update-helper",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kylekatarnls/update-helper.git",
+                "reference": "429be50660ed8a196e0798e5939760f168ec8ce9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kylekatarnls/update-helper/zipball/429be50660ed8a196e0798e5939760f168ec8ce9",
+                "reference": "429be50660ed8a196e0798e5939760f168ec8ce9",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1.0 || ^2.0.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "composer/composer": "2.0.x-dev || ^2.0.0-dev",
+                "phpunit/phpunit": ">=4.8.35 <6.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "UpdateHelper\\ComposerPlugin"
+            },
+            "autoload": {
+                "psr-0": {
+                    "UpdateHelper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle",
+                    "email": "kylekatarnls@gmail.com"
+                }
+            ],
+            "description": "Update helper",
+            "funding": [
+                {
+                    "url": "https://github.com/kylekatarnls",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/Carbon",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/nesbot/carbon",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-07T20:44:10+00:00"
+        },
+        {
+            "name": "matthiasmullie/minify",
+            "version": "1.3.63",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/minify.git",
+                "reference": "9ba1b459828adc13430f4dd6c49dae4950dc4117"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/9ba1b459828adc13430f4dd6c49dae4950dc4117",
+                "reference": "9ba1b459828adc13430f4dd6c49dae4950dc4117",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "matthiasmullie/path-converter": "~1.1",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.0",
+                "matthiasmullie/scrapbook": "~1.0",
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "psr/cache-implementation": "Cache implementation to use with Minify::cache"
+            },
+            "bin": [
+                "bin/minifycss",
+                "bin/minifyjs"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\Minify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "minify@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CSS & JavaScript minifier, in PHP. Removes whitespace, strips comments, combines files (incl. @import statements and small assets in CSS files), and optimizes/shortens a few common programming patterns.",
+            "homepage": "http://www.minifier.org",
+            "keywords": [
+                "JS",
+                "css",
+                "javascript",
+                "minifier",
+                "minify"
+            ],
+            "time": "2020-01-21T20:21:08+00:00"
+        },
+        {
+            "name": "matthiasmullie/path-converter",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/path-converter.git",
+                "reference": "e7d13b2c7e2f2268e1424aaed02085518afa02d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/path-converter/zipball/e7d13b2c7e2f2268e1424aaed02085518afa02d9",
+                "reference": "e7d13b2c7e2f2268e1424aaed02085518afa02d9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\PathConverter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "pathconverter@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Relative path converter",
+            "homepage": "http://github.com/matthiasmullie/path-converter",
+            "keywords": [
+                "converter",
+                "path",
+                "paths",
+                "relative"
+            ],
+            "time": "2019-02-05T23:41:09+00:00"
+        },
+        {
+            "name": "mpetrovich/dash",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpetrovich/dash.git",
+                "reference": "d325d14e2bbdb3568eedbb7c573f3796f4345a4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpetrovich/dash/zipball/d325d14e2bbdb3568eedbb7c573f3796f4345a4f",
+                "reference": "d325d14e2bbdb3568eedbb7c573f3796f4345a4f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "^2.8",
+                "phpunit/phpunit": "^4.7",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dash\\": [
+                        "src/"
+                    ]
+                },
+                "files": [
+                    "src/Dash.php",
+                    "src/_.php",
+                    "src/all.php",
+                    "src/any.php",
+                    "src/apply.php",
+                    "src/ary.php",
+                    "src/assertType.php",
+                    "src/at.php",
+                    "src/average.php",
+                    "src/call.php",
+                    "src/chain.php",
+                    "src/compare.php",
+                    "src/contains.php",
+                    "src/currify.php",
+                    "src/currifyN.php",
+                    "src/curry.php",
+                    "src/curryN.php",
+                    "src/curryRight.php",
+                    "src/curryRightN.php",
+                    "src/custom.php",
+                    "src/debug.php",
+                    "src/deltas.php",
+                    "src/difference.php",
+                    "src/dropWhile.php",
+                    "src/each.php",
+                    "src/equal.php",
+                    "src/filter.php",
+                    "src/find.php",
+                    "src/findKey.php",
+                    "src/findLast.php",
+                    "src/findLastKey.php",
+                    "src/findLastValue.php",
+                    "src/findValue.php",
+                    "src/first.php",
+                    "src/flatten.php",
+                    "src/get.php",
+                    "src/getDirect.php",
+                    "src/getDirectRef.php",
+                    "src/groupBy.php",
+                    "src/hasDirect.php",
+                    "src/identical.php",
+                    "src/identity.php",
+                    "src/intersection.php",
+                    "src/isEmpty.php",
+                    "src/isEven.php",
+                    "src/isIndexedArray.php",
+                    "src/isOdd.php",
+                    "src/isType.php",
+                    "src/join.php",
+                    "src/keyBy.php",
+                    "src/keys.php",
+                    "src/last.php",
+                    "src/map.php",
+                    "src/mapResult.php",
+                    "src/mapValues.php",
+                    "src/matches.php",
+                    "src/matchesProperty.php",
+                    "src/max.php",
+                    "src/median.php",
+                    "src/min.php",
+                    "src/negate.php",
+                    "src/omit.php",
+                    "src/partial.php",
+                    "src/partialRight.php",
+                    "src/pick.php",
+                    "src/pluck.php",
+                    "src/property.php",
+                    "src/reduce.php",
+                    "src/reject.php",
+                    "src/result.php",
+                    "src/reverse.php",
+                    "src/rotate.php",
+                    "src/set.php",
+                    "src/size.php",
+                    "src/sort.php",
+                    "src/sum.php",
+                    "src/take.php",
+                    "src/takeRight.php",
+                    "src/takeWhile.php",
+                    "src/tap.php",
+                    "src/thru.php",
+                    "src/toArray.php",
+                    "src/toObject.php",
+                    "src/unary.php",
+                    "src/union.php",
+                    "src/unique.php",
+                    "src/values.php",
+                    "src/where.php",
+                    "src/without.php",
+                    "src/Curry/all.php",
+                    "src/Curry/any.php",
+                    "src/Curry/apply.php",
+                    "src/Curry/ary.php",
+                    "src/Curry/assertType.php",
+                    "src/Curry/at.php",
+                    "src/Curry/average.php",
+                    "src/Curry/chain.php",
+                    "src/Curry/compare.php",
+                    "src/Curry/contains.php",
+                    "src/Curry/custom.php",
+                    "src/Curry/debug.php",
+                    "src/Curry/deltas.php",
+                    "src/Curry/each.php",
+                    "src/Curry/equal.php",
+                    "src/Curry/filter.php",
+                    "src/Curry/find.php",
+                    "src/Curry/findKey.php",
+                    "src/Curry/findLast.php",
+                    "src/Curry/findLastKey.php",
+                    "src/Curry/findLastValue.php",
+                    "src/Curry/findValue.php",
+                    "src/Curry/first.php",
+                    "src/Curry/get.php",
+                    "src/Curry/getDirect.php",
+                    "src/Curry/groupBy.php",
+                    "src/Curry/hasDirect.php",
+                    "src/Curry/identical.php",
+                    "src/Curry/identity.php",
+                    "src/Curry/isEmpty.php",
+                    "src/Curry/isEven.php",
+                    "src/Curry/isIndexedArray.php",
+                    "src/Curry/isOdd.php",
+                    "src/Curry/isType.php",
+                    "src/Curry/join.php",
+                    "src/Curry/keyBy.php",
+                    "src/Curry/keys.php",
+                    "src/Curry/last.php",
+                    "src/Curry/map.php",
+                    "src/Curry/mapResult.php",
+                    "src/Curry/mapValues.php",
+                    "src/Curry/matchesProperty.php",
+                    "src/Curry/max.php",
+                    "src/Curry/median.php",
+                    "src/Curry/min.php",
+                    "src/Curry/negate.php",
+                    "src/Curry/omit.php",
+                    "src/Curry/pick.php",
+                    "src/Curry/pluck.php",
+                    "src/Curry/property.php",
+                    "src/Curry/reduce.php",
+                    "src/Curry/reject.php",
+                    "src/Curry/result.php",
+                    "src/Curry/reverse.php",
+                    "src/Curry/rotate.php",
+                    "src/Curry/size.php",
+                    "src/Curry/sort.php",
+                    "src/Curry/sum.php",
+                    "src/Curry/take.php",
+                    "src/Curry/takeRight.php",
+                    "src/Curry/tap.php",
+                    "src/Curry/thru.php",
+                    "src/Curry/toArray.php",
+                    "src/Curry/toObject.php",
+                    "src/Curry/unary.php",
+                    "src/Curry/values.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Petrovich",
+                    "email": "michael.c.petrovich@gmail.com"
+                }
+            ],
+            "description": "A functional programming library for PHP. Inspired by Underscore, Lodash, and Ramda.",
+            "homepage": "https://github.com/mpetrovich/dash",
+            "keywords": [
+                "bottomline",
+                "functional",
+                "functional programming",
+                "lodash",
+                "php",
+                "ramda",
+                "underbar",
+                "underscore"
+            ],
+            "time": "2020-02-23T21:35:15+00:00"
+        },
+        {
+            "name": "nesbot/carbon",
+            "version": "1.39.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "4be0c005164249208ce1b5ca633cd57bdd42ff33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4be0c005164249208ce1b5ca633cd57bdd42ff33",
+                "reference": "4be0c005164249208ce1b5ca633cd57bdd42ff33",
+                "shasum": ""
+            },
+            "require": {
+                "kylekatarnls/update-helper": "^1.1",
+                "php": ">=5.3.9",
+                "symfony/translation": "~2.6 || ~3.0 || ~4.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.2",
+                "friendsofphp/php-cs-fixer": "~2",
+                "phpunit/phpunit": "^4.8.35 || ^5.7"
+            },
+            "bin": [
+                "bin/upgrade-carbon"
+            ],
+            "type": "library",
+            "extra": {
+                "update-helper": "Carbon\\Upgrade",
+                "laravel": {
+                    "providers": [
+                        "Carbon\\Laravel\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Nesbitt",
+                    "email": "brian@nesbot.com",
+                    "homepage": "http://nesbot.com"
+                }
+            ],
+            "description": "A simple API extension for DateTime.",
+            "homepage": "http://carbon.nesbot.com",
+            "keywords": [
+                "date",
+                "datetime",
+                "time"
+            ],
+            "time": "2019-10-14T05:51:36+00:00"
+        },
+        {
+            "name": "paragonie/random_compat",
+            "version": "v2.0.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "0a58ef6e3146256cc3dc7cc393927bcc7d1b72db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
+                "reference": "0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*|5.*"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/random.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com",
+                    "homepage": "https://paragonie.com"
+                }
+            ],
+            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+            "keywords": [
+                "csprng",
+                "polyfill",
+                "pseudorandom",
+                "random"
+            ],
+            "time": "2019-01-03T20:59:08+00:00"
+        },
+        {
+            "name": "pclzip/pclzip",
+            "version": "2.8.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ivanlanin/pclzip.git",
+                "reference": "19dd1de9d3f5fc4d7d70175b4c344dee329f45fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ivanlanin/pclzip/zipball/19dd1de9d3f5fc4d7d70175b4c344dee329f45fd",
+                "reference": "19dd1de9d3f5fc4d7d70175b4c344dee329f45fd",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "pclzip.lib.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Vincent Blavet"
+                }
+            ],
+            "description": "A PHP library that offers compression and extraction functions for Zip formatted archives",
+            "homepage": "http://www.phpconcept.net/pclzip",
+            "keywords": [
+                "php",
+                "zip"
+            ],
+            "time": "2014-06-05T11:42:24+00:00"
+        },
+        {
+            "name": "phpmailer/phpmailer",
+            "version": "v6.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPMailer/PHPMailer.git",
+                "reference": "c2796cb1cb99d7717290b48c4e6f32cb6c60b7b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/c2796cb1cb99d7717290b48c4e6f32cb6c60b7b3",
+                "reference": "c2796cb1cb99d7717290b48c4e6f32cb6c60b7b3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-filter": "*",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.2",
+                "friendsofphp/php-cs-fixer": "^2.2",
+                "phpunit/phpunit": "^4.8 || ^5.7"
+            },
+            "suggest": {
+                "ext-mbstring": "Needed to send email in multibyte encoding charset",
+                "hayageek/oauth2-yahoo": "Needed for Yahoo XOAUTH2 authentication",
+                "league/oauth2-google": "Needed for Google XOAUTH2 authentication",
+                "psr/log": "For optional PSR-3 debug logging",
+                "stevenmaguire/oauth2-microsoft": "Needed for Microsoft XOAUTH2 authentication",
+                "symfony/polyfill-mbstring": "To support UTF-8 if the Mbstring PHP extension is not enabled (^1.2)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPMailer\\PHPMailer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-only"
+            ],
+            "authors": [
+                {
+                    "name": "Marcus Bointon",
+                    "email": "phpmailer@synchromedia.co.uk"
+                },
+                {
+                    "name": "Jim Jagielski",
+                    "email": "jimjag@gmail.com"
+                },
+                {
+                    "name": "Andy Prevost",
+                    "email": "codeworxtech@users.sourceforge.net"
+                },
+                {
+                    "name": "Brent R. Matzelle"
+                }
+            ],
+            "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
+            "funding": [
+                {
+                    "url": "https://github.com/synchro",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-05-27T12:24:03+00:00"
+        },
+        {
+            "name": "phpoffice/common",
+            "version": "0.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/Common.git",
+                "reference": "edb5d32b1e3400a35a5c91e2539ed6f6ce925e4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/Common/zipball/edb5d32b1e3400a35a5c91e2539ed6f6ce925e4d",
+                "reference": "edb5d32b1e3400a35a5c91e2539ed6f6ce925e4d",
+                "shasum": ""
+            },
+            "require": {
+                "pclzip/pclzip": "^2.8",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phploc/phploc": "2.*",
+                "phpmd/phpmd": "2.*",
+                "phpunit/phpunit": "^4.8.36 || ^7.0",
+                "sebastian/phpcpd": "2.*",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpOffice\\Common\\": "src/Common/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://rootslabs.net"
+                }
+            ],
+            "description": "PHPOffice Common",
+            "homepage": "http://phpoffice.github.io",
+            "keywords": [
+                "common",
+                "component",
+                "office",
+                "php"
+            ],
+            "time": "2018-07-13T14:12:34+00:00"
+        },
+        {
+            "name": "phpoffice/phpword",
+            "version": "0.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPWord.git",
+                "reference": "b8346af548d399acd9e30fc76ab0c55c2fec03a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPWord/zipball/b8346af548d399acd9e30fc76ab0c55c2fec03a5",
+                "reference": "b8346af548d399acd9e30fc76ab0c55c2fec03a5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "php": "^5.3.3 || ^7.0",
+                "phpoffice/common": "^0.2.9",
+                "zendframework/zend-escaper": "^2.2"
+            },
+            "require-dev": {
+                "dompdf/dompdf": "0.8.*",
+                "ext-gd": "*",
+                "ext-zip": "*",
+                "friendsofphp/php-cs-fixer": "^2.2",
+                "mpdf/mpdf": "5.7.4 || 6.* || 7.*",
+                "php-coveralls/php-coveralls": "1.1.0 || ^2.0",
+                "phploc/phploc": "2.* || 3.* || 4.*",
+                "phpmd/phpmd": "2.*",
+                "phpunit/phpunit": "^4.8.36 || ^7.0",
+                "squizlabs/php_codesniffer": "^2.9",
+                "tecnickcom/tcpdf": "6.*"
+            },
+            "suggest": {
+                "dompdf/dompdf": "Allows writing PDF",
+                "ext-gd2": "Allows adding images",
+                "ext-xmlwriter": "Allows writing OOXML and ODF",
+                "ext-xsl": "Allows applying XSL style sheet to headers, to main document part, and to footers of an OOXML template",
+                "ext-zip": "Allows writing OOXML and ODF"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.18-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpOffice\\PhpWord\\": "src/PhpWord"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Gabriel Bull",
+                    "email": "me@gabrielbull.com",
+                    "homepage": "http://gabrielbull.com/"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "https://rootslabs.net/blog/"
+                },
+                {
+                    "name": "Ivan Lanin",
+                    "homepage": "http://ivan.lanin.org"
+                },
+                {
+                    "name": "Roman Syroeshko",
+                    "homepage": "http://ru.linkedin.com/pub/roman-syroeshko/34/a53/994/"
+                },
+                {
+                    "name": "Antoine de Troostembergh"
+                }
+            ],
+            "description": "PHPWord - A pure PHP library for reading and writing word processing documents (OOXML, ODF, RTF, HTML, PDF)",
+            "homepage": "http://phpoffice.github.io",
+            "keywords": [
+                "ISO IEC 29500",
+                "OOXML",
+                "Office Open XML",
+                "OpenDocument",
+                "OpenXML",
+                "PhpOffice",
+                "PhpWord",
+                "Rich Text Format",
+                "WordprocessingML",
+                "doc",
+                "docx",
+                "html",
+                "odf",
+                "odt",
+                "office",
+                "pdf",
+                "php",
+                "reader",
+                "rtf",
+                "template",
+                "template processor",
+                "word",
+                "writer"
+            ],
+            "time": "2019-10-01T20:43:33+00:00"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "v3.4.42",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "5ec813ccafa8164ef21757e8c725d3a57da59200"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/5ec813ccafa8164ef21757e8c725d3a57da59200",
+                "reference": "5ec813ccafa8164ef21757e8c725d3a57da59200",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Finder\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-02-14T07:34:21+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "fa79b11539418b02fc5e1897267673ba2c19419c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fa79b11539418b02fc5e1897267673ba2c19419c",
+                "reference": "fa79b11539418b02fc5e1897267673ba2c19419c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.17-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-12T16:47:27+00:00"
+        },
+        {
+            "name": "symfony/translation",
+            "version": "v3.4.42",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation.git",
+                "reference": "b0cd62ef0ff7ec31b67d78d7fc818e2bda4e844f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/b0cd62ef0ff7ec31b67d78d7fc818e2bda4e844f",
+                "reference": "b0cd62ef0ff7ec31b67d78d7fc818e2bda4e844f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "conflict": {
+                "symfony/config": "<2.8",
+                "symfony/dependency-injection": "<3.4",
+                "symfony/yaml": "<3.4"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~2.8|~3.0|~4.0",
+                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/finder": "~2.8|~3.0|~4.0",
+                "symfony/http-kernel": "~3.4|~4.0",
+                "symfony/intl": "^2.8.18|^3.2.5|~4.0",
+                "symfony/var-dumper": "~3.4|~4.0",
+                "symfony/yaml": "~3.4|~4.0"
+            },
+            "suggest": {
+                "psr/log-implementation": "To use logging capability in translator",
+                "symfony/config": "",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Translation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Translation Component",
+            "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-30T18:58:05+00:00"
+        },
+        {
+            "name": "tecnickcom/tcpdf",
+            "version": "6.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tecnickcom/TCPDF.git",
+                "reference": "19a535eaa7fb1c1cac499109deeb1a7a201b4549"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/19a535eaa7fb1c1cac499109deeb1a7a201b4549",
+                "reference": "19a535eaa7fb1c1cac499109deeb1a7a201b4549",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "config",
+                    "include",
+                    "tcpdf.php",
+                    "tcpdf_parser.php",
+                    "tcpdf_import.php",
+                    "tcpdf_barcodes_1d.php",
+                    "tcpdf_barcodes_2d.php",
+                    "include/tcpdf_colors.php",
+                    "include/tcpdf_filters.php",
+                    "include/tcpdf_font_data.php",
+                    "include/tcpdf_fonts.php",
+                    "include/tcpdf_images.php",
+                    "include/tcpdf_static.php",
+                    "include/barcodes/datamatrix.php",
+                    "include/barcodes/pdf417.php",
+                    "include/barcodes/qrcode.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Nicola Asuni",
+                    "email": "info@tecnick.com",
+                    "role": "lead"
+                }
+            ],
+            "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
+            "homepage": "http://www.tcpdf.org/",
+            "keywords": [
+                "PDFD32000-2008",
+                "TCPDF",
+                "barcodes",
+                "datamatrix",
+                "pdf",
+                "pdf417",
+                "qrcode"
+            ],
+            "time": "2020-02-14T14:20:12+00:00"
+        },
+        {
+            "name": "zendframework/zend-escaper",
+            "version": "2.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-escaper.git",
+                "reference": "3801caa21b0ca6aca57fa1c42b08d35c395ebd5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-escaper/zipball/3801caa21b0ca6aca57fa1c42b08d35c395ebd5f",
+                "reference": "3801caa21b0ca6aca57fa1c42b08d35c395ebd5f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.2",
+                "zendframework/zend-coding-standard": "~1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6.x-dev",
+                    "dev-develop": "2.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Escaper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Securely and safely escape HTML, HTML attributes, JavaScript, CSS, and URLs",
+            "keywords": [
+                "ZendFramework",
+                "escaper",
+                "zf"
+            ],
+            "abandoned": "laminas/laminas-escaper",
+            "time": "2019-09-05T20:03:20+00:00"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "mikey179/vfsstream",
+            "version": "v1.6.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bovigo/vfsStream.git",
+                "reference": "231c73783ebb7dd9ec77916c10037eff5a2b6efe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/231c73783ebb7dd9ec77916c10037eff5a2b6efe",
+                "reference": "231c73783ebb7dd9ec77916c10037eff5a2b6efe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "org\\bovigo\\vfs\\": "src/main/php"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Frank Kleine",
+                    "homepage": "http://frankkleine.de/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Virtual file system to mock the real file system in unit tests.",
+            "homepage": "http://vfs.bovigo.org/",
+            "time": "2019-10-30T15:31:00+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.6.0"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

@@ -5,4 +5,5 @@
 /app/config/development/database.php
 /app/config/qa.php
 /app/logs/*.php
+/app/vendor
 /TODO

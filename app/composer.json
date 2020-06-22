@@ -1,0 +1,28 @@
+{
+	"description": "Simple App Question Answer like Stackoverflow usng MySQL and PHP CodeIgniter",
+	"name": "adjadtea/sunqa",
+	"homepage": "https://github.com/adjadtea/SunQA",
+	"require": {
+		"php": ">=5.6.0",
+		"matthiasmullie/minify": "*",
+		"tecnickcom/tcpdf":"*",
+		"brandonwamboldt/utilphp":"*",
+		"phpmailer/phpmailer":"*",
+		"mpetrovich/dash": "*",
+		"gregwar/captcha": "*",
+		"paragonie/random_compat": "*",
+		"jenssegers/date":"*",
+		"phpoffice/phpword": "*",
+		"kint-php/kint": "*",
+		"kint-php/kint-js": "*"
+	},
+	"require-dev": {
+		"mikey179/vfsstream": "*"
+	},
+	"scripts": {
+        "post-update-cmd": [
+            "composer dump-autoload",
+            "composer dump-autoload -o"
+        ]
+    }
+} 
