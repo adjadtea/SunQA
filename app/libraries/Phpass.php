@@ -41,21 +41,17 @@ class Phpass {
 	 * @access	public
 	 * @param	array
 	 */
-	public function __construct($params = array())
-	{
+	public function __construct($params = array()){
 		$this->ci =& get_instance();
-
-		if (count($params) > 0)
-		{
+		if (count($params) > 0){
 			$this->initialize($params);
 		}
-
-		if ($this->ci->config->item('iteration_count') < 4 || $this->ci->config->item('iteration_count') > 31)
+		if ($this->ci->config->item('iteration_count') < 4 || $this->ci->config->item('iteration_count') > 31){
 			$this->ci->config->item('iteration_count') == 8;
+		}
 
 		$this->_random_state = microtime();
-		if (function_exists('getmypid'))
-			$this->_random_state .= getmypid();
+		if (function_exists('getmypid')) $this->_random_state .= getmypid();
 	}
 	
 	/**

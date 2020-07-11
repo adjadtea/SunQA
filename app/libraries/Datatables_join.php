@@ -38,13 +38,10 @@ class Datatables_join
      * @return array Formatted data in a row based format
      */
 
-    static function data_output ( $columns, $data, $isJoin = false )
-    {
+    static function data_output ( $columns, $data, $isJoin = false ){
         $out = array();
-
         for ( $i=0, $ien=count($data) ; $i<$ien ; $i++ ) {
             $row = array();
-
             for ( $j=0, $jen=count($columns) ; $j<$jen ; $j++ ) {
                 $column = $columns[$j];
 
