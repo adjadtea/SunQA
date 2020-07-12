@@ -31,7 +31,7 @@ class Home extends QA_Publics{
 				'join'=>'question.category_id=category.id_category',
 			],
 		];
-        $var = $this->qa_model->join3_where_ajax('question', $arTableJoin, 'question.id_question DESC', 5, 0);
+        $var = $this->qa_model->join_where('question', $arTableJoin,null,'question.id_question DESC', 5, 0);
         return ($var == FALSE)?array():$var;
 	}
     public function _question_tag(){
@@ -45,7 +45,7 @@ class Home extends QA_Publics{
 				'join'=>'question_tag.tag_id=tag.id_tag',
 			],
 		];
-        $var = $this->qa_model->join3('question_tag', $arTableJoin, 'question_tag.id_qt');
+        $var = $this->qa_model->join_where('question_tag', $arTableJoin,null,'question_tag.id_qt');
         return ($var == FALSE)?array():$var;
     }
 }

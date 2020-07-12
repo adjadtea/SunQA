@@ -26,14 +26,14 @@ class Create extends QA_Publics
 				$this->form_validation->set_rules('description_question', 'Description', 'trim|required|xss_clean');
 				if ($this->form_validation->run() == TRUE)
 				{				
-					$insert = array(
+					$insert = [
 						'user_id' => $this->qa_libs->id_user(),
 						'subject' => $this->input->post('subject', TRUE),
 						'category_id' => $this->input->post('category_id', TRUE),
 						'description_question' => $this->input->post('description_question', TRUE),
 						'question_date' => date('Y-m-d H:i:s'),
 						'url_question' => qa_url($this->qa_libs->last_question(), $this->input->post('subject', TRUE)),
-						);			
+					];
 					$this->qa_model->insert('question', $insert);
 					$question = $this->qa_model->firt_or_last('question', 'id_question DESC');
 					foreach ($question as $q) {

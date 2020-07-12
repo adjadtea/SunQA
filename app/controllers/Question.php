@@ -25,12 +25,18 @@ class Question extends QA_Publics
 				{
 					foreach ($data['question'] as $question)
 					{
-						$data['answer'] = $this->qa_model->join2_where('answer', 'user', 'question', 'answer.user_id=user.id_user', 'answer.question_id=question.id_question', array('answer.question_id' => $question->id_question), 'answer.id_answer');
-						$data['comment_in_question'] = $this->qa_model->join2_where('comment', 'user', 'question', 'comment.user_id=user.id_user', 'comment.question_id=question.id_question', array('comment.question_id' => $question->id_question), 'comment.id_comment');
-						$data['count_vote'] = $this->qa_model->count_where2('vote', array('question_id' => $question->id_question), array('vote_for' => 'Up')) - $this->qa_model->count_where2('vote', array('question_id' => $question->id_question), array('vote_for' => 'Down'));
-
+						$arTableJoinAnswer = [
+							['table'=>'user','join'=>'answer.user_id=user.id_user'],
+							['table'=>'question','join'=>'answer.question_id=question.id_question'],
+						];
+						$arTableJoinCommentQuestion = [
+							['table'=>'user','join'=>'comment.user_id=user.id_user'],
+							['table'=>'question','join'=>'comment.question_id=question.id_question'],
+						];
+						$data['answer'] = $this->qa_model->join_where('answer',$arTableJoinAnswer,['answer.question_id' => $question->id_question], 'answer.id_answer');
+						$data['comment_in_question'] = $this->qa_model->join_where('comment',$arTableJoinCommentQuestion,['comment.question_id' => $question->id_question], 'comment.id_comment');
+						$data['count_vote'] = $this->qa_model->count_where('vote', ['question_id' => $question->id_question,'vote_for' => 'Up']) - $this->qa_model->count_where('vote', ['question_id' => $question->id_question, 'vote_for' => 'Down']);
 						$this->qa_model->viewers('question', 'viewers', array('id_question' => $question->id_question));
-
 						if ($this->qa_libs->logged_in())
 						{
 							if ($question->user_id != $this->qa_libs->id_user())
@@ -94,7 +100,7 @@ class Question extends QA_Publics
 												);
 											$this->qa_model->update('question', $update, array('id_question' => $question->id_question));
 											$this->qa_model->delete('question_tag', array('question_id' => $question->id_question));
-											$loop_question = $this->qa_model->get('question', array('id_question' => $question->id_question));
+											$loop_question = $this->qa_model->get_where('question',['id_question' => $question->id_question]);
 											foreach ($loop_question as $lq) {
 												foreach ($this->input->post('id_tag', TRUE) as $tag)
 												{
@@ -138,7 +144,10 @@ class Question extends QA_Publics
 							{
 								if ($question->user_id != $this->qa_libs->id_user())
 								{
-									$check_exist = $this->qa_model->get_two('vote', array('user_id' => $this->qa_libs->id_user()), array('question_id' => $question->id_question));
+									$check_exist = $this->qa_model->get_where('vote',[
+										'user_id' => $this->qa_libs->id_user(),
+										'question_id' => $question->id_question
+									]);
 									if ($check_exist == TRUE)
 									{
 										foreach ($check_exist as $vote)
@@ -185,7 +194,11 @@ class Question extends QA_Publics
 							{
 								if ($question->user_id != $this->qa_libs->id_user())
 								{
-									$check_exist = $this->qa_model->get_two('vote', array('user_id' => $this->qa_libs->id_user()), array('question_id' => $question->id_question));
+									$arWhere = [
+										'user_id' => $this->qa_libs->id_user(),
+										'question_id' => $question->id_question
+									];
+									$check_exist = $this->qa_model->get_where('vote', $arWhere);
 									if ($check_exist == TRUE)
 									{
 										foreach ($check_exist as $vote)
@@ -248,7 +261,10 @@ class Question extends QA_Publics
 							{
 								if ($question->user_id === $this->qa_libs->id_user())
 								{
-									$check_exist = $this->qa_model->get_two('answer', array('id_answer' => $num), array('question_id' => $question->id_question));
+									$check_exist = $this->qa_model->get_where('answer',[
+										'id_answer' => $num,
+										'question_id' => $question->id_question
+									]);
 									if (!empty($check_exist))
 									{
 										$update_question = array(
@@ -274,14 +290,20 @@ class Question extends QA_Publics
 						{
 							foreach ($data['question'] as $question)
 							{
-								$answer = $this->qa_model->get_two('answer', array('id_answer' => $num), array('question_id' => $question->id_question));
+								$answer = $this->qa_model->get_where('answer', [
+									'id_answer' => $num,
+									'question_id' => $question->id_question
+								]);
 								if ($answer != FALSE)
 								{
 									foreach ($answer as $ans)
 									{
 										if ($ans->user_id != $this->qa_libs->id_user())
 										{
-											$check_exist = $this->qa_model->get_two('vote', array('user_id' => $this->qa_libs->id_user()), array('answer_id' => $num));
+											$check_exist = $this->qa_model->get_where('vote', [
+												'user_id' => $this->qa_libs->id_user(),
+												'answer_id' => $num
+											]);
 											if ($check_exist == TRUE)
 											{
 												foreach ($check_exist as $vote)
@@ -333,14 +355,20 @@ class Question extends QA_Publics
 						{
 							foreach ($data['question'] as $question)
 							{
-								$answer = $this->qa_model->get_two('answer', array('id_answer' => $num), array('question_id' => $question->id_question));
+								$answer = $this->qa_model->get_where('answer', [
+									'id_answer' => $num,
+									'question_id' => $question->id_question
+								]);
 								if ($answer != FALSE)
 								{
 									foreach ($answer as $ans)
 									{
 										if ($ans->user_id != $this->qa_libs->id_user())
 										{
-											$check_exist = $this->qa_model->get_two('vote', array('user_id' => $this->qa_libs->id_user()), array('answer_id' => $num));
+											$check_exist = $this->qa_model->get_where('vote', [
+												'user_id' => $this->qa_libs->id_user(),
+												'answer_id' => $num
+											]);
 											if ($check_exist == TRUE)
 											{
 												foreach ($check_exist as $vote)
@@ -390,7 +418,7 @@ class Question extends QA_Publics
 						}
 						elseif ($action === 'cq')
 						{
-							$data['comment_question'] = $this->qa_model->join_where('question', 'user', 'question.user_id=user.id_user', array('id_question' => $num), 'question.id_question');
+							$data['comment_question'] = $this->qa_model->join_where('question',['table'=>'user','join'=>'question.user_id=user.id_user'], ['id_question' => $num], 'question.id_question');
 							if (!empty($data['comment_question']))
 							{
 								$this->form_validation->set_rules('description_comment', 'Description', 'trim|required|xss_clean');
@@ -420,7 +448,11 @@ class Question extends QA_Publics
 						}
 						elseif ($action === 'ca')
 						{
-							$data['comment_answer'] = $this->qa_model->join2_where('answer', 'user', 'question', 'answer.user_id=user.id_user', 'answer.question_id=question.id_question', array('id_answer' => $num), 'answer.id_answer');
+							$arTableJoin = [
+								['table'=>'user','join'=>'answer.user_id=user.id_user'],
+								['table'=>'question','join'=>'answer.question_id=question.id_question'],
+							];
+							$data['comment_answer'] = $this->qa_model->join_where('answer', $arTableJoin, ['id_answer' => $num], 'answer.id_answer');
 							if (!empty($data['comment_answer']))
 							{
 								$this->form_validation->set_rules('description_comment', 'Description', 'trim|required|xss_clean');
@@ -450,7 +482,11 @@ class Question extends QA_Publics
 						}
 						elseif ($action === 'ua')
 						{
-							$data['update_answer'] = $this->qa_model->join2_where2('answer', 'user', 'question', 'answer.user_id=user.id_user', 'answer.question_id=question.id_question', array('id_answer' => $num), array('answer.user_id' => $this->qa_libs->id_user()), 'answer.id_answer');
+							$arTableJoin = [
+								['table'=>'user','join'=>'answer.user_id=user.id_user'],
+								['table'=>'question','join'=>'answer.question_id=question.id_question'],
+							];
+							$data['update_answer'] = $this->qa_model->join_where('answer',$arTableJoin,['id_answer' => $num,'answer.user_id' => $this->qa_libs->id_user()], 'answer.id_answer');
 							if (!empty($data['update_answer']))
 							{
 								$this->form_validation->set_rules('description_answer', 'Description', 'trim|required|xss_clean');
@@ -477,7 +513,7 @@ class Question extends QA_Publics
 						}
 						elseif ($action === 'uc')
 						{
-							$data['update_comment'] = $this->qa_model->join_where2('comment', 'user', 'comment.user_id=user.id_user', array('id_comment' => $num), array('comment.user_id' => $this->qa_libs->id_user()), 'comment.id_comment');
+							$data['update_comment'] = $this->qa_model->join_where('comment',['table'=>'user','join'=>'comment.user_id=user.id_user'], ['id_comment' => $num,'comment.user_id' => $this->qa_libs->id_user()], 'comment.id_comment');
 							if (!empty($data['update_comment']))
 							{
 								$this->form_validation->set_rules('description_comment', 'Description', 'trim|required|xss_clean');
@@ -504,7 +540,11 @@ class Question extends QA_Publics
 						}
 						elseif ($action === 'da')
 						{
-							$data['delete_answer'] = $this->qa_model->join2_where2('answer', 'user', 'question', 'answer.user_id=user.id_user', 'answer.question_id=question.id_question', array('id_answer' => $num), array('answer.user_id' => $this->qa_libs->id_user()), 'answer.id_answer');
+							$arTableJoin = [
+								['table'=>'user','join'=>'answer.user_id=user.id_user'],
+								['table'=>'question','join'=>'answer.question_id=question.id_question'],
+							];
+							$data['delete_answer'] = $this->qa_model->join_where('answer',$arTableJoin, ['id_answer' => $num,'answer.user_id' => $this->qa_libs->id_user()], 'answer.id_answer');
 							if (!empty($data['delete_answer']))
 							{
 								$this->qa_model->delete('answer', array('id_answer' => $num));
@@ -518,7 +558,7 @@ class Question extends QA_Publics
 						}
 						elseif ($action === 'dc')
 						{
-							$data['delete_comment'] = $this->qa_model->join_where2('comment', 'user', 'comment.user_id=user.id_user', array('id_comment' => $num), array('comment.user_id' => $this->qa_libs->id_user()), 'comment.id_comment');
+							$data['delete_comment'] = $this->qa_model->join_where('comment', ['table'=>'user','join'=>'comment.user_id=user.id_user'], ['id_comment' => $num, 'comment.user_id' => $this->qa_libs->id_user()], 'comment.id_comment');
 							if (!empty($data['delete_comment']))
 							{
 								$this->qa_model->delete('comment', array('id_comment' => $num));
@@ -563,13 +603,21 @@ class Question extends QA_Publics
 
 	function _get($str)
 	{
-        $var = $this->qa_model->join2_where('question', 'user', 'category', 'question.user_id=user.id_user', 'question.category_id=category.id_category', array('url_question' => $str), 'question.id_question DESC');
+		$arTableJoin = [
+			['table'=>'user','join'=>'question.user_id=user.id_user'],
+			['table'=>'category','join'=>'question.category_id=category.id_category'],
+		];
+        $var = $this->qa_model->join_where('question', $arTableJoin, '',['url_question' => $str], 'question.id_question DESC');
         return ($var == FALSE)?array():$var;
 	}
 
     function _question_tag($str)
     {
-        $var = $this->qa_model->join2_where('question_tag', 'question', 'tag', 'question_tag.question_id=question.id_question', 'question_tag.tag_id=tag.id_tag', array('url_question' => $str), 'question_tag.id_qt');
+		$arTableJoin = [
+			['table'=>'question','join'=>'question_tag.question_id=question.id_question'],
+			['table'=>'tag','join'=>'question_tag.tag_id=tag.id_tag'],
+		];
+        $var = $this->qa_model->join_where('question_tag',$arTableJoin, ['url_question' => $str], 'question_tag.id_qt');
         return ($var == FALSE)?array():$var;
     }
 }

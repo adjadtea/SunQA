@@ -17,11 +17,29 @@ class Tag extends QA_Publics
 		{
 			if (!empty($this->_get($str)))
 			{
+				$arTableJoin = [
+					[
+						'table'=>'question_tag',
+						'join'=>'question_tag.question_id=question.id_question',
+					],
+					[
+						'table'=>'tag',
+						'join'=>'question_tag.tag_id=tag.id_tag',
+					],
+					[
+						'table'=>'user',
+						'join'=>'question.user_id=user.id_user',
+					],
+					[
+						'table'=>'category',
+						'join'=>'question.category_id=category.id_category',
+					],
+				];
 				foreach ($this->_get($str) as $tag)
 				{
 					if (!empty($ajax)) {
 						$data = array(
-							'questions' => $this->qa_model->join4_where_ajax('question', 'question_tag', 'tag', 'user', 'category', 'question_tag.question_id=question.id_question', 'question_tag.tag_id=tag.id_tag', 'question.user_id=user.id_user', 'question.category_id=category.id_category', array('tag.tag_name' => uri_decode($str)), 'question.id_question', 5, $ajax),
+							'questions' => $this->qa_model->join_where('question',$arTableJoin,['tag.tag_name' => uri_decode($str)], 'question.id_question', 5, $ajax),
 							);
 						if (!empty($data['questions']))
 						{
@@ -35,7 +53,7 @@ class Tag extends QA_Publics
 					} else {
 						$data = array(
 							'tag' => $this->_get($str),
-							'questions' => $this->qa_model->join4_where_ajax('question', 'question_tag', 'tag', 'user', 'category', 'question_tag.question_id=question.id_question', 'question_tag.tag_id=tag.id_tag', 'question.user_id=user.id_user', 'question.category_id=category.id_category', array('tag.tag_name' => uri_decode($str)), 'question.id_question', 5, 0),
+							'questions' => $this->qa_model->join_where('question',$arTableJoin,['tag.tag_name' => uri_decode($str)], 'question.id_question', 5, 0),
 							);
 						if (!empty($data['questions']))
 						{
@@ -74,7 +92,7 @@ class Tag extends QA_Publics
 
     function _get($str)
     {
-        $var = $this->qa_model->get('tag', array('tag_name' => uri_decode($str)));
+        $var = $this->qa_model->get_where('tag',['tag_name' => uri_decode($str)]);
         return ($var == FALSE)?array():$var;
     }
 }

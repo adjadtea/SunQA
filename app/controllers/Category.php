@@ -30,7 +30,7 @@ class Category extends QA_Publics
 				foreach ($this->_get($str) as $cat){
 					if (!empty($ajax)) {
 						$data = array(
-							'questions' => $this->qa_model->join3_where_ajax('question',$arTableJoin, array('category_id' => $cat->id_category), 'question.id_question DESC', 5, $ajax),
+							'questions' => $this->qa_model->join_where('question',$arTableJoin, array('category_id' => $cat->id_category), 'question.id_question DESC', 5, $ajax),
 							'question_tag' => $this->_question_tag(),
 							);
 						if (!empty($data['questions']))
@@ -45,7 +45,7 @@ class Category extends QA_Publics
 					} else {
 						$data = array(
 							'category' => $this->_get($str),
-							'questions' => $this->qa_model->join3_where_ajax('question',$arTableJoin, array('category_id' => $cat->id_category), 'question.id_question DESC', 5, 0),
+							'questions' => $this->qa_model->join_where('question',$arTableJoin, array('category_id' => $cat->id_category), 'question.id_question DESC', 5, 0),
 							'question_tag' => $this->_question_tag(),
 							);
 						if (!empty($data['questions']))
@@ -92,7 +92,7 @@ class Category extends QA_Publics
 				'join'=>'question_tag.tag_id=tag.id_tag',
 			],
 		];
-        $var = $this->qa_model->join3('question_tag', $arTableJoin, 'question_tag.id_qt');
+        $var = $this->qa_model->join_where('question_tag', $arTableJoin,null,'question_tag.id_qt');
         return ($var == FALSE)?array():$var;
     }
 }

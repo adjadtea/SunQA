@@ -34,35 +34,121 @@ class User extends QA_Publics{
 		}
 	}
     public function _get($str){
-        $var = $this->qa_model->join_where('user', 'role', 'user.role_id=role.id_role', array('username' => $str), 'user.id_user');
+        $var = $this->qa_model->join_where('user', ['table'=>'role','join'=>'user.role_id=role.id_role'], ['username' => $str], 'user.id_user');
         return ($var == FALSE)?array():$var;
     }
     public function _question($str){
-        $var = $this->qa_model->join2_where('question', 'user', 'category', 'question.user_id=user.id_user', 'question.category_id=category.id_category', array('username' => $str), 'question.id_question DESC');
+		$arTableJoin = [
+			[
+				'table'=>'user',
+				'join'=>'question.user_id=user.id_user',
+			],
+			[
+				'table'=>'category',
+				'join'=>'question.category_id=category.id_category',
+			],
+		];
+        $var = $this->qa_model->join_where('question',$arTableJoin,['username' => $str], 'question.id_question DESC');
         return ($var == FALSE)?array():$var;
     }
     public function _question_tag($str){
-        $var = $this->qa_model->join3_where('question_tag', 'question', 'tag', 'user', 'question_tag.question_id=question.id_question', 'question_tag.tag_id=tag.id_tag', 'question.user_id=user.id_user', array('username' => $str), 'question_tag.id_qt');
+		$arTableJoin = [
+			[
+				'table'=>'question',
+				'join'=>'question_tag.question_id=question.id_question',
+			],
+			[
+				'table'=>'tag',
+				'join'=>'question_tag.tag_id=tag.id_tag',
+			],
+			[
+				'table'=>'user',
+				'join'=>'question.user_id=user.id_user',
+			],
+		];
+        $var = $this->qa_model->join_where('question_tag',$arTableJoin,['username' => $str], 'question_tag.id_qt');
         return ($var == FALSE)?array():$var;
     }
     public function _answer($str){
-    	$var = $this->qa_model->join3_where('answer', 'user', 'question', 'category', 'answer.user_id=user.id_user', 'answer.question_id=question.id_question', 'question.category_id=category.id_category', array('username' => $str), 'answer.id_answer DESC');
+		$arTableJoin = [
+			[
+				'table'=>'user',
+				'join'=>'answer.user_id=user.id_user',
+			],
+			[
+				'table'=>'question',
+				'join'=>'answer.question_id=question.id_question',
+			],
+			[
+				'table'=>'category',
+				'join'=>'question.category_id=category.id_category',
+			],
+		];
+    	$var = $this->qa_model->join_where('answer',$arTableJoin,['username' => $str], 'answer.id_answer DESC');
         return ($var == FALSE)?array():$var;
     }
     public function _comment_question($str){
-    	$var = $this->qa_model->join2_where('comment', 'user', 'question', 'comment.user_id=user.id_user', 'comment.question_id=question.id_question', array('username' => $str), 'comment.id_comment DESC');
+		$arTableJoin = [
+			[
+				'table'=>'user',
+				'join'=>'comment.user_id=user.id_user',
+			],
+			[
+				'table'=>'question',
+				'join'=>'comment.question_id=question.id_question',
+			],
+		];
+    	$var = $this->qa_model->join_where('comment',$arTableJoin,['username' => $str], 'comment.id_comment DESC');
         return ($var == FALSE)?array():$var;
     }
     public function _comment_answer($str){
-    	$var = $this->qa_model->join3_where('comment', 'user', 'answer', 'question', 'comment.user_id=user.id_user', 'comment.answer_id=answer.id_answer', 'answer.question_id=question.id_question', array('username' => $str), 'comment.id_comment DESC');
+		$arTableJoin = [
+			[
+				'table'=>'user',
+				'join'=>'comment.user_id=user.id_user',
+			],
+			[
+				'table'=>'answer',
+				'join'=>'comment.answer_id=answer.id_answer',
+			],
+			[
+				'table'=>'question',
+				'join'=>'answer.question_id=question.id_question',
+			],
+		];
+    	$var = $this->qa_model->join_where('comment',$arTableJoin,['username' => $str], 'comment.id_comment DESC');
         return ($var == FALSE)?array():$var;
     }
     public function _vote_question($str){
-    	$var = $this->qa_model->join2_where('vote', 'user', 'question', 'vote.user_id=user.id_user', 'vote.question_id=question.id_question', array('username' => $str), 'vote.id_vote DESC');
+		$arTableJoin = [
+			[
+				'table'=>'user',
+				'join'=>'vote.user_id=user.id_user',
+			],
+			[
+				'table'=>'question',
+				'join'=>'vote.question_id=question.id_question',
+			],
+		];
+    	$var = $this->qa_model->join_where('vote',$arTableJoin,['username' => $str], 'vote.id_vote DESC');
         return ($var == FALSE)?array():$var;
     }
     public function _vote_answer($str){
-    	$var = $this->qa_model->join3_where('vote', 'user', 'answer', 'question', 'vote.user_id=user.id_user', 'vote.answer_id=answer.id_answer', 'answer.question_id=question.id_question', array('username' => $str), 'vote.id_vote DESC');
+		$arTableJoin = [
+			[
+				'table'=>'user',
+				'join'=>'vote.user_id=user.id_user',
+			],
+			[
+				'table'=>'answer',
+				'join'=>'vote.answer_id=answer.id_answer',
+			],
+			[
+				'table'=>'question',
+				'join'=>'answer.question_id=question.id_question',
+			],
+		];
+    	$var = $this->qa_model->join_where('vote',$arTableJoin,['username' => $str], 'vote.id_vote DESC');
         return ($var == FALSE)?array():$var;
     }
 }

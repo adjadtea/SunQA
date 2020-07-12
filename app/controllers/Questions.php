@@ -13,10 +13,20 @@ class Questions extends QA_Publics
 {
 	function index($str = NULL)
 	{
+		$arTableJoin = [
+			[
+				'table'=>'user',
+				'join'=>'question.user_id=user.id_user',
+			],
+			[
+				'table'=>'category',
+				'join'=>'question.category_id=category.id_category',
+			],
+		];
 		if (!empty($str))
 		{
 			$data = array(
-				'questions' => $this->qa_model->join2_ajax('question', 'user', 'category', 'question.user_id=user.id_user', 'question.category_id=category.id_category', 'question.id_question DESC', 5, $str),
+				'questions' => $this->qa_model->join_where('question', $arTableJoin,null, 'question.id_question DESC', 5, $str),
 				'question_tag' => $this->_question_tag(),
 				);
 			if (!empty($data['questions']))
@@ -32,7 +42,7 @@ class Questions extends QA_Publics
 		else
 		{
 			$data = array(
-				'questions' => $this->qa_model->join2_ajax('question', 'user', 'category', 'question.user_id=user.id_user', 'question.category_id=category.id_category', 'question.id_question DESC', 5, 0),
+				'questions' => $this->qa_model->join_where('question', 'user', 'category', 'question.user_id=user.id_user', 'question.category_id=category.id_category', 'question.id_question DESC', 5, 0),
 				'question_tag' => $this->_question_tag(),
 				);
 			if (!empty($data['questions']))
@@ -49,9 +59,19 @@ class Questions extends QA_Publics
 
 	function unanswereds($str = NULL)
 	{
+		$arTableJoin = [
+			[
+				'table'=>'user',
+				'join'=>'question.user_id=user.id_user',
+			],
+			[
+				'table'=>'category',
+				'join'=>'question.category_id=category.id_category',
+			],
+		];
 		if (!empty($str)) {
 			$data = array(
-				'questions' => $this->qa_model->join2_where_ajax('question', 'user', 'category', 'question.user_id=user.id_user', 'question.category_id=category.id_category', array('answer_id' => NULL), 'question.id_question DESC', 5, $str),
+				'questions' => $this->qa_model->join_where('question',$arTableJoin, ['answer_id' => NULL], 'question.id_question DESC', 5, $str),
 				'question_tag' => $this->_question_tag(),
 				);
 			if (!empty($data['questions']))
@@ -65,7 +85,7 @@ class Questions extends QA_Publics
 			}
 		} else {
 			$data = array(
-				'questions' => $this->qa_model->join2_where_ajax('question', 'user', 'category', 'question.user_id=user.id_user', 'question.category_id=category.id_category', array('answer_id' => NULL), 'question.id_question DESC', 5, 0),
+				'questions' => $this->qa_model->join_where('question', $arTableJoin,['answer_id' => NULL], 'question.id_question DESC', 5, 0),
 				'question_tag' => $this->_question_tag(),
 				);
 			if (!empty($data['questions']))
@@ -82,11 +102,21 @@ class Questions extends QA_Publics
 
 	function most_view($str = NULL)
 	{
+		$arTableJoin = [
+			[
+				'table'=>'user',
+				'join'=>'question.user_id=user.id_user',
+			],
+			[
+				'table'=>'category',
+				'join'=>'question.category_id=category.id_category',
+			],
+		];
 		if (!empty($str)) {
 			$data = array(
-				'questions' => $this->qa_model->join2_ajax('question', 'user', 'category', 'question.user_id=user.id_user', 'question.category_id=category.id_category', 'question.viewers DESC', 5, $str),
+				'questions' => $this->qa_model->join_where('question',$arTableJoin,null,'question.viewers DESC', 5, $str),
 				'question_tag' => $this->_question_tag(),
-				);
+			);
 			if (!empty($data['questions']))
 			{
 				$this->load->view('questions/most_view_ajax', $data);
@@ -98,9 +128,9 @@ class Questions extends QA_Publics
 			}
 		} else {
 			$data = array(
-				'questions' => $this->qa_model->join2_ajax('question', 'user', 'category', 'question.user_id=user.id_user', 'question.category_id=category.id_category', 'question.viewers DESC', 5, 0),
+				'questions' => $this->qa_model->join_where('question',$arTableJoin,null,'question.viewers DESC', 5, 0),
 				'question_tag' => $this->_question_tag(),
-				);
+			);
 			if (!empty($data['questions']))
 			{
 				$this->_render('questions/most_view', $data);
@@ -115,7 +145,17 @@ class Questions extends QA_Publics
 
     function _question_tag()
     {
-        $var = $this->qa_model->join2('question_tag', 'question', 'tag', 'question_tag.question_id=question.id_question', 'question_tag.tag_id=tag.id_tag', 'question_tag.id_qt');
+		$arTableJoin = [
+			[
+				'table'=>'question',
+				'join'=>'question_tag.question_id=question.id_question',
+			],
+			[
+				'table'=>'tag',
+				'join'=>'question_tag.tag_id=tag.id_tag',
+			],
+		];
+        $var = $this->qa_model->join_where('question_tag',$arTableJoin, null,'question_tag.id_qt');
         return ($var == FALSE)?array():$var;
     }
 }

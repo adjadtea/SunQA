@@ -77,7 +77,7 @@ class Auth extends CI_Controller
 	function activated($str = NULL)
 	{
 		if (!empty($str)) {
-			$checking = $this->qa_model->get('user', array('activated_hash' => $str));
+			$checking = $this->qa_model->get_where('user',['activated_hash' => $str]);
 			if ($checking != FALSE) {
 				foreach ($checking as $user)
 				{
@@ -112,7 +112,7 @@ class Auth extends CI_Controller
 		{
 			if (!empty($str))
 			{
-				$checking = $this->qa_model->get('user', array('lost_password' => $str));
+				$checking = $this->qa_model->get_where('user',['lost_password' => $str]);
 				if ($checking != FALSE) {
 					foreach ($checking as $user)
 					{
@@ -150,7 +150,7 @@ class Auth extends CI_Controller
 				$this->form_validation->set_error_delimiters('<p>', '</p>');
 				if ($this->form_validation->run() == TRUE)
 				{
-					$checking = $this->qa_model->get('user', array('email' => $this->input->post('email', TRUE)));
+					$checking = $this->qa_model->get_where('user',['email' => $this->input->post('email', TRUE)]);
 					if ($checking != FALSE)
 					{
 						foreach ($checking as $user)
